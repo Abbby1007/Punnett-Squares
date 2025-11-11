@@ -45,7 +45,6 @@ function dihybrid(){
     pos2 = Math.floor(Math.random() * 2);
     pos3 = Math.floor(Math.random() * 2);
     pos4 = Math.floor(Math.random() * 2);
-    display.innerHTML = `${pos1}`;
 
     if(pos1 == 0){
         value1 = 1; // B
@@ -65,20 +64,23 @@ function dihybrid(){
         letter2 = 'b';
     }
 
-    if(pos3 = 0){
+   if(pos3 == 0){
         value3 = 2; // T
         letter3 = 'T';
-    }else{
-        value3 = 4; //t
+    }
+    else{
+        value3 = 4;// t
         letter3 = 't';
-        }
-    if(pos4 = 0){
+    }
+
+   if(pos4 == 0){
         value4 = 2; // T
         letter4 = 'T';
-    }else{
-        value4 = 4;//t
+    }
+    else{
+        value4 = 4;// t
         letter4 = 't';
-        }
+    }
 
     display.innerHTML = `${letter1} ${letter2} ${letter3} ${letter4}`;
 
