@@ -3,6 +3,70 @@ function test(){
 display.innerHTML = 'Bye';
 }
 
+
+function monohybird(){
+// mg1 = Mother Gamate 1 and mg2 = Mother Gamete 2
+// fg1 = Father Gamete 1 and fg2 = Father Gamete 2
+let mg1, mg2, fg1, fg2;
+
+// v1 = value1(mg1) and v2 = value2(mg2)
+// v3 = value3(fg1) and v4 = value4(fg2)
+let value1, value2, value3, value4;
+
+// l1 = Letter1(mg1) and l2 = Letter2(mg2)
+// l3 = Letter3(fg1) and l4 = Letter4(fg2)
+let l1, l2, l3,l4;
+
+// G (dominant)- Green petals
+// g (recessive) - yellow petals
+
+// Randomly generates the value for each gamete
+    mg1 = Math.floor(Math.random() * 2);
+    mg2 = Math.floor(Math.random() * 2);
+    fg1 = Math.floor(Math.random() * 2);
+    fg2 = Math.floor(Math.random() * 2);
+
+    // G = 0; g = 1;
+
+     if(mg1 == 0){
+        v1 = 1; // G
+        l1 = 'G';
+    }
+    else{
+        v1 = 3;// g
+        l1 = 'g';
+    }
+
+    if(mg2 == 0){
+        v2 = 1; // G
+        l2 = 'G';
+    }
+    else{
+        v2 = 3; //g
+        l2 = 'g';
+    }
+
+   if(fg1 == 0){
+        v3 = 2; // G
+        l3 = 'G';
+    }
+    else{
+        v3 = 4;// g
+        l3 = 'g';
+    }
+
+   if(fg2 == 0){
+        v4 = 2; // G
+        l4 = 'G';
+    }
+    else{
+        v4 = 4;// g
+        l4 = 'g';
+    }
+   display.innerHTML = `Mother: ${l1} ${l2} | Father: ${l3} ${l4}`;
+}
+
+
 function dihybrid(){
     let pos1;
     let pos2;
