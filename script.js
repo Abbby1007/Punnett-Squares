@@ -1,10 +1,16 @@
 const display = document.getElementById("display");
-function test(){
-display.innerHTML = 'Bye';
-}
-
+const mg1D = document.getElementById("mg1"); // Mother Gamete 1 display;
+const mg2D = document.getElementById("mg2"); // Mother Gamete 2 display;
+const fg1D = document.getElementById("fg1"); // Father Gamete 1 display;
+const fg2D = document.getElementById("fg2"); // Father Gamete 2 display;
+let A1D = document.getElementById("A1"); // Answer 1 display;
+let A2D = document.getElementById("A2"); // Answer 2 display;
+let A3D = document.getElementById("A3"); // Answer 3 display;
+let A4D = document.getElementById("A4"); // Answer 4 display;
+let start = document.getElementById.style.visibiliy = "visible";
 
 function monohybird(){
+    // start = "hidden";
 // mg1 = Mother Gamate 1 and mg2 = Mother Gamete 2
 // fg1 = Father Gamete 1 and fg2 = Father Gamete 2
 let mg1, mg2, fg1, fg2;
@@ -29,7 +35,7 @@ let l1, l2, l3,l4;
     // G = 0; g = 1;
 
      if(mg1 == 0){
-        v1 = 1; // G
+        v1 = 2; // G
         l1 = 'G';
     }
     else{
@@ -38,7 +44,7 @@ let l1, l2, l3,l4;
     }
 
     if(mg2 == 0){
-        v2 = 1; // G
+        v2 = 2; // G
         l2 = 'G';
     }
     else{
@@ -51,7 +57,7 @@ let l1, l2, l3,l4;
         l3 = 'G';
     }
     else{
-        v3 = 4;// g
+        v3 = 3;// g
         l3 = 'g';
     }
 
@@ -60,12 +66,68 @@ let l1, l2, l3,l4;
         l4 = 'G';
     }
     else{
-        v4 = 4;// g
+        v4 = 3;// g
         l4 = 'g';
     }
    display.innerHTML = `Mother: ${l1} ${l2} | Father: ${l3} ${l4}`;
-}
 
+   mg1D.textContent = `${l1}`;
+   mg2D.textContent = `${l2}`;
+   fg1D.textContent = `${l3}`;
+   fg2D.textContent = `${l4}`;
+   
+   // G value = 2; g value = 3;
+    //GG = 4; Gg = 6; gg = 9; 
+    A1 = v1*v3;
+    A2 = v2*v3 ;
+    A3 =  v1*v4;
+    A4 =  v2*v4;
+
+// Display for the Answer one section
+    if(A1 == 4){
+        A1D.innerHTML = `GG`;
+    }
+    else if(A1 == 6){
+        A1D.textContent = `Gg`;
+    }
+    else if(A1 == 9){
+        A1D.textContent = `gg`;
+    }
+// Display for the Answer two section
+        if(A2 == 4){
+        A2D.innerHTML = `GG`;
+    }
+    else if(A2 == 6){
+        A2D.textContent = `Gg`;
+    }
+    else if(A2 == 9){
+        A2D.textContent = `gg`;
+    }
+
+    // Display for the Answer three section
+        if(A3 == 4){
+        A3D.innerHTML = `GG`;
+    }
+    else if(A3 == 6){
+        A3D.textContent = `Gg`;
+    }
+    else if(A3 == 9){
+        A3D.textContent = `gg`;
+    }
+
+    // Display for the Answer four section
+        if(A4 == 4){
+        A4D.innerHTML = `GG`;
+    }
+    else if(A4 == 6){
+        A4D.textContent = `Gg`;
+    }
+    else if(A4 == 9){
+        A4D.textContent = `gg`;
+    }
+
+}
+ 
 
 function dihybrid(){
     let pos1;
