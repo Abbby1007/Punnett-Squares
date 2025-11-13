@@ -17,6 +17,15 @@ let A3Div = document.getElementById("A3Div");
 let A4Div = document.getElementById("A4Div");
 
 let result = document.getElementById("result");
+let end = document.getElementById("end");
+
+let A1count = 0;
+let A2count = 0;
+let A3count = 0;
+let A4count = 0;
+
+let totalCorrect = 0;
+let count = 0;
 
 function monohybird(){
 
@@ -80,7 +89,8 @@ let l1, l2, l3,l4;
         v4 = 3;// g
         l4 = 'g';
     }
-   display.innerHTML = `What is the answer for A1, A2, A3 and A4?`;
+   display.innerHTML = `What is the answer for A1, A2, A3 and A4? <br> 
+   To see the correct answers press "DONE"`;
 
    mg1D.textContent = `${l1}`;
    mg2D.textContent = `${l2}`;
@@ -116,112 +126,159 @@ A4Div.innerHTML = `     <h3> A4 Options: </h3>
         A1D.innerHTML = `GG`;
         // GG is the correct answer
         A1Div.innerHTML = `<h3> A1 Options: </h3>
-                <button onclick='correct()'> GG </button>
-                <button onclick = "wrong()"> gg </button>
-                <button onclick = "wrong()"> Gg </button>`
+                <button onclick='A1correct()'> GG </button>
+                <button onclick = "A1wrong()"> gg </button>
+                <button onclick = "A1wrong()"> Gg </button>`
     }
     else if(A1 == 6){
         // Gg is the correct answer
         A1D.textContent = `Gg`;
                A1Div.innerHTML = `<h3> A1 Options: </h3>
-                <button onclick = "wrong()"> GG </button>
-                <button onclick = "wrong()"> gg </button>
-                <button onclick='correct()'> Gg </button>`
+                <button onclick = "A1wrong()"> GG </button>
+                <button onclick = "A1wrong()"> gg </button>
+                <button onclick='A1correct()'> Gg </button>`
     }
     else if(A1 == 9){
         // gg is the correct answer
         A1D.textContent = `gg`;
                A1Div.innerHTML = `<h3> A1 Options: </h3>
-                <button onclick = "wrong()"> GG </button>
-                <button onclick='correct()'> gg </button>
-                <button onclick = "wrong()"> Gg </button>`
+                <button onclick = "A1wrong()"> GG </button>
+                <button onclick='A1correct()'> gg </button>
+                <button onclick = "A1wrong()"> Gg </button>`
     }
 // Display for the Answer two section
         if(A2 == 4){
         A2D.innerHTML = `GG`;
               A2Div.innerHTML = `<h3> A2 Options: </h3>
-                <button onclick='correct()'> GG </button>
-                <button onclick = "wrong()"> gg </button>
-                <button onclick = "wrong()"> Gg </button>`
+                <button onclick='A2correct()'> GG </button>
+                <button onclick = "A2wrong()"> gg </button>
+                <button onclick = "A2wrong()"> Gg </button>`
     }
     else if(A2 == 6){
         A2D.textContent = `Gg`;
                 A2D.textContent = `Gg`;
                A2Div.innerHTML = `<h3> A2 Options: </h3>
-                <button onclick = "wrong()"> GG </button>
-                <button onclick = "wrong()"> gg </button>
-                <button onclick='correct()'> Gg </button>`
+                <button onclick = "A2wrong()"> GG </button>
+                <button onclick = "A2wrong()"> gg </button>
+                <button onclick='A2correct()'> Gg </button>`
     }
     else if(A2 == 9){
         A2D.textContent = `gg`;
         A2Div.innerHTML = `<h3> A2 Options: </h3>
-                <button onclick = "wrong()"> GG </button>
-                <button onclick='correct()'> gg </button>
-                <button onclick = "wrong()"> Gg </button>`
+                <button onclick = "A2wrong()"> GG </button>
+                <button onclick='A2correct()'> gg </button>
+                <button onclick = "A2wrong()"> Gg </button>`
     }
 
     // Display for the Answer three section
         if(A3 == 4){
         A3D.innerHTML = `GG`;
         A3Div.innerHTML = `<h3> A3 Options: </h3>
-            <button onclick='correct()'> GG </button>
-            <button onclick = "wrong()"> gg </button>
-            <button onclick = "wrong()"> Gg </button>`
+            <button onclick='A3correct()'> GG </button>
+            <button onclick = "A3wrong()"> gg </button>
+            <button onclick = "A3wrong()"> Gg </button>`
     }
     else if(A3 == 6){
         A3D.textContent = `Gg`;
         A3Div.innerHTML = `<h3> A3 Options: </h3>
-                <button onclick = "wrong()"> GG </button>
-                <button onclick = "wrong()"> gg </button>
-                <button onclick='correct()'> Gg </button>`
+                <button onclick = "A3wrong()"> GG </button>
+                <button onclick = "A3wrong()"> gg </button>
+                <button onclick='A3correct()'> Gg </button>`
     }
     else if(A3 == 9){
         A3D.textContent = `gg`;
         A3Div.innerHTML = `<h3> A3 Options: </h3>
-                <button onclick = "wrong()"> GG </button>
-                <button onclick='correct()'> gg </button>
-                <button onclick = "wrong()"> Gg </button>`
+                <button onclick = "A3wrong()"> GG </button>
+                <button onclick='A3correct()'> gg </button>
+                <button onclick = "A3wrong()"> Gg </button>`
     }
 
     // Display for the Answer four section
         if(A4 == 4){
         A4D.innerHTML = `GG`;
         A4Div.innerHTML = `<h3> A4 Options: </h3>
-            <button onclick='correct()'> GG </button>
-            <button onclick = "wrong()"> gg </button>
-            <button onclick = "wrong()"> Gg </button>`
+            <button onclick='A4correct()'> GG </button>
+            <button onclick = "A4wrong()"> gg </button>
+            <button onclick = "A4wrong()"> Gg </button>`
     }
     else if(A4 == 6){
         A4D.textContent = `Gg`;
         A4Div.innerHTML = `<h3> A4 Options: </h3>
-                <button onclick = "wrong()"> GG </button>
-                <button onclick = "wrong()"> gg </button>
-                <button onclick='correct()'> Gg </button>`
+                <button onclick = "A4wrong()"> GG </button>
+                <button onclick = "A4wrong()"> gg </button>
+                <button onclick='A4correct()'> Gg </button>`
     }
     else if(A4 == 9){
         A4D.textContent = `gg`;
         A4Div.innerHTML = `<h3> A4 Options: </h3>
-                <button onclick = "wrong()"> GG </button>
-                <button onclick='correct()'> gg </button>
-                <button onclick = "wrong()"> Gg </button>`
+                <button onclick = "A4wrong()"> GG </button>
+                <button onclick='A4correct()'> gg </button>
+                <button onclick = "A4wrong()"> Gg </button>`
     }
 
+  done();
  
 
-
-
 }
-       function correct(){
+// COUNT TO KEEP TRACK IF ALL BUTTONS HAVE BEEN PRESSED IS NOT WORKING
+function done(){
+    if(count == 4){
+   end.textContent = `DONE :D`;
+    }
+ 
+}
+//A1 correct and wrong
+       function A1correct(){
         result.innerHTML = `<h2> Result: CORRECT!!!!! </h2>`;
-    }
+        A1Div.textContent = ``;
+        count += 1;
 
-        function wrong(){
+    }
+        function A1wrong(){
     result.innerHTML = `<h2> Result: WRONG :( </h2>`;
+            A1Div.textContent = ``;
+            count += 1;
+    }
+    
+    // A2 Correct and wrong
+       function A2correct(){
+        result.innerHTML = `<h2> Result: CORRECT!!!!! </h2>`;
+        A2Div.textContent = ``;
+        count += 1;
+
+    }
+        function A2wrong(){
+    result.innerHTML = `<h2> Result: WRONG :( </h2>`;
+            A2Div.textContent = ``;
+            count += 1;
     }
 
 
+    //A3 correct and wrong
+       function A3correct(){
+        result.innerHTML = `<h2> Result: CORRECT!!!!! </h2>`;
+        A3Div.textContent = ``;
+        count += 1;
 
+    }
+        function A3wrong(){
+    result.innerHTML = `<h2> Result: WRONG :( </h2>`;
+            A3Div.textContent = ``;
+            count += 1;
+    }
 
+    //A4 correct and wrong
+       function A4correct(){
+        result.innerHTML = `<h2> Result: CORRECT!!!!! </h2>`;
+        A4Div.textContent = ``;
+        count += 1;
+
+    }
+        function A4wrong(){
+    result.innerHTML = `<h2> Result: WRONG :( </h2>`;
+            A4Div.textContent = ``;
+            count += 1;
+    }
 
 function dihybrid(){
     let pos1;
