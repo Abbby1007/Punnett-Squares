@@ -19,6 +19,9 @@ let A4Div = document.getElementById("A4Div");
 let result = document.getElementById("result");
 let end = document.getElementById("end");
 
+document.getElementById("done").style.visibility = `hidden`; 
+document.getElementById("next").style.visibility = `hidden`; 
+
 let A1count = 0;
 let A2count = 0;
 let A3count = 0;
@@ -29,8 +32,18 @@ let count = 0;
 
 function monohybird(){
 
- 
+    // STUFF FOR THE LOOP PART
+result.innerHTML = `<h2>Result: </h2>`;
+document.getElementById("next").style.visibility = `hidden`; 
 document.getElementById("start").style.visibility = `hidden`; 
+document.getElementById("done").style.visibility = `visible`; 
+      A1D.textContent = `A1`;
+      A2D.textContent = `A2`;
+      A3D.textContent = `A3`;
+      A4D.textContent = `A4`;
+
+
+
 // mg1 = Mother Gamate 1 and mg2 = Mother Gamete 2
 // fg1 = Father Gamete 1 and fg2 = Father Gamete 2
 let mg1, mg2, fg1, fg2;
@@ -104,26 +117,24 @@ let l1, l2, l3,l4;
     A3 =  v1*v4;
     A4 =  v2*v4;
 
-
-
-A2Div.innerHTML = `
-        <h3> A2 Options: </h3>
-                <button> GG </button>
-                <button> gg </button>
-                <button> Gg </button>`;
-A3Div.innerHTML = `
-        <h3> A3 Options: </h3>
-                <button> GG </button>
-                <button> gg </button>
-                <button> Gg </button>`;
-A4Div.innerHTML = `     <h3> A4 Options: </h3>
-                <button> GG </button>
-                <button> gg </button>
-                <button> Gg </button>`;
+// A2Div.innerHTML = `
+//         <h3> A2 Options: </h3>
+//                 <button> GG </button>
+//                 <button> gg </button>
+//                 <button> Gg </button>`;
+// A3Div.innerHTML = `
+//         <h3> A3 Options: </h3>
+//                 <button> GG </button>
+//                 <button> gg </button>
+//                 <button> Gg </button>`;
+// A4Div.innerHTML = `     <h3> A4 Options: </h3>
+//                 <button> GG </button>
+//                 <button> gg </button>
+//                 <button> Gg </button>`;
 
 // Display for the Answer one section
     if(A1 == 4){
-        A1D.innerHTML = `GG`;
+        // A1D.innerHTML = `GG`;
         // GG is the correct answer
         A1Div.innerHTML = `<h3> A1 Options: </h3>
                 <button onclick='A1correct()'> GG </button>
@@ -132,7 +143,7 @@ A4Div.innerHTML = `     <h3> A4 Options: </h3>
     }
     else if(A1 == 6){
         // Gg is the correct answer
-        A1D.textContent = `Gg`;
+        // A1D.textContent = `Gg`;
                A1Div.innerHTML = `<h3> A1 Options: </h3>
                 <button onclick = "A1wrong()"> GG </button>
                 <button onclick = "A1wrong()"> gg </button>
@@ -140,7 +151,7 @@ A4Div.innerHTML = `     <h3> A4 Options: </h3>
     }
     else if(A1 == 9){
         // gg is the correct answer
-        A1D.textContent = `gg`;
+        // A1D.textContent = `gg`;
                A1Div.innerHTML = `<h3> A1 Options: </h3>
                 <button onclick = "A1wrong()"> GG </button>
                 <button onclick='A1correct()'> gg </button>
@@ -148,22 +159,21 @@ A4Div.innerHTML = `     <h3> A4 Options: </h3>
     }
 // Display for the Answer two section
         if(A2 == 4){
-        A2D.innerHTML = `GG`;
+        // A2D.innerHTML = `GG`;
               A2Div.innerHTML = `<h3> A2 Options: </h3>
                 <button onclick='A2correct()'> GG </button>
                 <button onclick = "A2wrong()"> gg </button>
                 <button onclick = "A2wrong()"> Gg </button>`
     }
     else if(A2 == 6){
-        A2D.textContent = `Gg`;
-                A2D.textContent = `Gg`;
+        // A2D.textContent = `Gg`;
                A2Div.innerHTML = `<h3> A2 Options: </h3>
                 <button onclick = "A2wrong()"> GG </button>
                 <button onclick = "A2wrong()"> gg </button>
                 <button onclick='A2correct()'> Gg </button>`
     }
     else if(A2 == 9){
-        A2D.textContent = `gg`;
+        // A2D.textContent = `gg`;
         A2Div.innerHTML = `<h3> A2 Options: </h3>
                 <button onclick = "A2wrong()"> GG </button>
                 <button onclick='A2correct()'> gg </button>
@@ -172,21 +182,21 @@ A4Div.innerHTML = `     <h3> A4 Options: </h3>
 
     // Display for the Answer three section
         if(A3 == 4){
-        A3D.innerHTML = `GG`;
+        // A3D.innerHTML = `GG`;
         A3Div.innerHTML = `<h3> A3 Options: </h3>
             <button onclick='A3correct()'> GG </button>
             <button onclick = "A3wrong()"> gg </button>
             <button onclick = "A3wrong()"> Gg </button>`
     }
     else if(A3 == 6){
-        A3D.textContent = `Gg`;
+        // A3D.textContent = `Gg`;
         A3Div.innerHTML = `<h3> A3 Options: </h3>
                 <button onclick = "A3wrong()"> GG </button>
                 <button onclick = "A3wrong()"> gg </button>
                 <button onclick='A3correct()'> Gg </button>`
     }
     else if(A3 == 9){
-        A3D.textContent = `gg`;
+        // A3D.textContent = `gg`;
         A3Div.innerHTML = `<h3> A3 Options: </h3>
                 <button onclick = "A3wrong()"> GG </button>
                 <button onclick='A3correct()'> gg </button>
@@ -195,43 +205,91 @@ A4Div.innerHTML = `     <h3> A4 Options: </h3>
 
     // Display for the Answer four section
         if(A4 == 4){
-        A4D.innerHTML = `GG`;
+        // A4D.innerHTML = `GG`;
         A4Div.innerHTML = `<h3> A4 Options: </h3>
             <button onclick='A4correct()'> GG </button>
             <button onclick = "A4wrong()"> gg </button>
             <button onclick = "A4wrong()"> Gg </button>`
     }
     else if(A4 == 6){
-        A4D.textContent = `Gg`;
+        // A4D.textContent = `Gg`;
         A4Div.innerHTML = `<h3> A4 Options: </h3>
                 <button onclick = "A4wrong()"> GG </button>
                 <button onclick = "A4wrong()"> gg </button>
                 <button onclick='A4correct()'> Gg </button>`
     }
     else if(A4 == 9){
-        A4D.textContent = `gg`;
+        // A4D.textContent = `gg`;
         A4Div.innerHTML = `<h3> A4 Options: </h3>
                 <button onclick = "A4wrong()"> GG </button>
                 <button onclick='A4correct()'> gg </button>
                 <button onclick = "A4wrong()"> Gg </button>`
-    }
-
-  done();
- 
+    } 
 
 }
-// COUNT TO KEEP TRACK IF ALL BUTTONS HAVE BEEN PRESSED IS NOT WORKING
+
 function done(){
-    if(count == 4){
-   end.textContent = `DONE :D`;
+document.getElementById("next").style.visibility = `visible`;
+document.getElementById("done").style.visibility = `hidden`;
+   display.innerHTML = `press "NEXT" to get a new question`;
+if(A1 == 4){
+        A1D.innerHTML = `GG`;
+        // GG is the correct answer
+    }
+    else if(A1 == 6){
+        // Gg is the correct answer
+        A1D.textContent = `Gg`;
+    }
+    else if(A1 == 9){
+        // gg is the correct answer
+        A1D.textContent = `gg`;
+    }
+// Display for the Answer two section
+        if(A2 == 4){
+        A2D.innerHTML = `GG`;
+    }
+    else if(A2 == 6){
+        A2D.textContent = `Gg`;
+    }
+    else if(A2 == 9){
+        A2D.textContent = `gg`;
+    }
+
+    // Display for the Answer three section
+        if(A3 == 4){
+        A3D.innerHTML = `GG`;
+    }
+    else if(A3 == 6){
+        A3D.textContent = `Gg`;
+    }
+    else if(A3 == 9){
+        A3D.textContent = `gg`;
+    }
+
+    // Display for the Answer four section
+        if(A4 == 4){
+        A4D.innerHTML = `GG`;
+    }
+    else if(A4 == 6){
+        A4D.textContent = `Gg`;
+    }
+    else if(A4 == 9){
+        A4D.textContent = `gg`;
+    }
+
+    A1Div.innerHTML = ``;
+    A2Div.innerHTML = ``;
+    A3Div.innerHTML = ``;
+    A4Div.innerHTML = ``;
+    result.innerHTML = ``;
+ 
     }
  
-}
+
 //A1 correct and wrong
        function A1correct(){
         result.innerHTML = `<h2> Result: CORRECT!!!!! </h2>`;
-        A1Div.textContent = ``;
-        count += 1;
+        A1Div.textContent = ``;  
 
     }
         function A1wrong(){
@@ -244,13 +302,13 @@ function done(){
        function A2correct(){
         result.innerHTML = `<h2> Result: CORRECT!!!!! </h2>`;
         A2Div.textContent = ``;
-        count += 1;
+      
 
     }
         function A2wrong(){
     result.innerHTML = `<h2> Result: WRONG :( </h2>`;
             A2Div.textContent = ``;
-            count += 1;
+         
     }
 
 
@@ -258,13 +316,13 @@ function done(){
        function A3correct(){
         result.innerHTML = `<h2> Result: CORRECT!!!!! </h2>`;
         A3Div.textContent = ``;
-        count += 1;
+
 
     }
         function A3wrong(){
     result.innerHTML = `<h2> Result: WRONG :( </h2>`;
             A3Div.textContent = ``;
-            count += 1;
+   
     }
 
     //A4 correct and wrong
