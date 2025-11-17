@@ -6,7 +6,7 @@ Link to play: https://abbby1007.github.io/Punnett-Squares/<br>
 Progress Video:https://youtu.be/lw6PVLOCaFA
 <br>
 
-I made this website because I 💖 PUNNETT SQUARES and I just create a quick project.
+I made this website because I 💖 PUNNETT SQUARES and I just wanted to create a quick project.
 from this website I worked with html tables for the first time.
 
 <br>
